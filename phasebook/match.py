@@ -20,8 +20,14 @@ def match(match_id):
 
 
 def is_match(fave_numbers_1, fave_numbers_2):
-    for number in fave_numbers_2:
-        if number not in fave_numbers_1:
-            return False
+    set_fave_numbers_1 = set(fave_numbers_1)
 
-    return True
+    return all(number in set_fave_numbers_1 for number in fave_numbers_2)
+
+# dummy match data only
+match_id = {
+    0: ([1, 2, 3, 4, 5]),
+    1: ([10, 20, 30, 40, 50]),
+    2: ([1, 3, 5]),
+    3: ([100, 200, 300])
+}
